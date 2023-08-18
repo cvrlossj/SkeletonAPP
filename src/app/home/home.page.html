@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>SkeletonApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,8 +11,57 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  
+  <ion-card class="ion-margin-vertical">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">¡Bienvenido!</ion-card-title>
+      <ion-item>
+        <ion-input readonly label="Usuario:" [(ngModel)]="usuario"></ion-input>
+      </ion-item>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <div>
+          <h1>Información Adicional</h1>
+        </div>
+        <ion-item>
+          <ion-input label="Nombre:" placeholder="Ingresar su nombre" [(ngModel)]="nombre"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-input label="Apellido:" placeholder="Ingresar su apellido" [(ngModel)]="apellido"></ion-input>
+        </ion-item>
+
+        <!-- OPCIONES -->
+        <ion-item>
+          <ion-select label="Nivel Educación:" placeholder="Seleccione Nivel" [(ngModel)]="nvl_edu">
+            <ion-select-option value="apple">Básica</ion-select-option>
+            <ion-select-option value="banana">Media</ion-select-option>
+            <ion-select-option value="orange">Enseñanza superior</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Fecha de Nacimiento:</ion-label>
+          <ion-input type="date"></ion-input>
+        </ion-item>
+      
+        <ion-row>
+          <ion-col size="6">
+            <ion-button expand="full" color="warning" (click)="limpiarInputs()">Limpiar</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button expand="full" color="primary" (click)="mostrarValores()">Mostrar</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>App desarrollada por Carlos</ion-title>
+  </ion-toolbar>
+</ion-footer>
