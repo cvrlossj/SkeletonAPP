@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>SkeletonApp</ion-title>
+    <ion-title id="title">SkeletonApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -26,11 +26,11 @@
           <h1>Información Adicional</h1>
         </div>
         <ion-item>
-          <ion-input label="Nombre:" placeholder="Ingresar su nombre" [(ngModel)]="nombre"></ion-input>
+          <ion-input label="Nombre:" id="nombreInp" placeholder="Ingresar su nombre" [(ngModel)]="nombre"></ion-input>
         </ion-item>
       
         <ion-item>
-          <ion-input label="Apellido:" placeholder="Ingresar su apellido" [(ngModel)]="apellido"></ion-input>
+          <ion-input label="Apellido:" id="apellidoInp" placeholder="Ingresar su apellido" [(ngModel)]="apellido"></ion-input>
         </ion-item>
 
         <!-- OPCIONES -->
@@ -53,6 +53,9 @@
           </ion-col>
           <ion-col size="6">
             <ion-button expand="full" color="primary" (click)="mostrarValores()">Mostrar</ion-button>
+          </ion-col>
+          <ion-col size="12">
+            <ion-button expand="full" color="danger" (click)="cerrarSesion()">Cerrar sesión</ion-button>
           </ion-col>
         </ion-row>
       </ion-list>
